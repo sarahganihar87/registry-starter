@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Playfair_Display, DM_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -9,23 +9,20 @@ import { cn } from "@/lib/utils";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Registry Starter",
-  description: "Starter to help build a Shadcn Registry using Tailwind v4",
+  title: "AURA — Design System",
+  description: "AURA beauty app design system for v0.dev",
   icons: [{ rel: "icon", url: "/favicon.svg", type: "image/svg+xml" }],
 };
 
-const GeistSans = Geist({
+const DmSans = DM_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
   variable: "--font-sans",
 });
 
-const GeistMono = Geist_Mono({
+const Playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-mono",
-});
-
-const MontserratSerif = Montserrat({
-  subsets: ["latin"],
+  weight: ["600", "700"],
   variable: "--font-serif",
 });
 
@@ -38,10 +35,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        GeistSans.variable,
-        GeistMono.variable,
-        MontserratSerif.variable,
-        "bg-background text-foreground",
+        DmSans.variable,
+        Playfair.variable,
+        "bg-background text-foreground font-sans",
       )}
     >
       <meta
